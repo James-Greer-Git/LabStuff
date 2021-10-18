@@ -9,10 +9,10 @@ public class birthday {
         scanner.close();
         int sum_prob = 0;
 
-        for(int i = 0; i <= 10000; i++){
+        for(int i = 0; i <= 100000; i++){
             sum_prob = sum_prob + birthday_loop(n, x);
         }
-        System.out.print(sum_prob/100);
+        System.out.print(sum_prob/1000);
     }
     public static int birthday_loop(int n, int x){
         int[] array = new int[n];
@@ -27,7 +27,7 @@ public class birthday {
                 }
             }
         }
-        if(count >= x){                                          //if x or more students are found to have the same birthday, return 1
+        if(count >= x - 1){                                          //if x or more students are found to have the same birthday, return 1
             return 1;
         }
         else{
