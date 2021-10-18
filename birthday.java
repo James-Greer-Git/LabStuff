@@ -27,7 +27,7 @@ public class birthday {
                 }
             }
         }
-        if(count >= x - 1){                                          //if x or more students are found to have the same birthday, return 1
+        if(count >= x - 1){                                     //if x or more students are found to have the same birthday, return 1
             return 1;
         }
         else{
