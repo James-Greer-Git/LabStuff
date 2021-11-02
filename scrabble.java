@@ -59,10 +59,15 @@ public class scrabble{
                     //start_index = i;
                     valueCount++;
                 }
-                if((reverseValues[i] != reverseValues[j] && valueCount > 0) || (j == reverseArray.length - 1 && valueCount > 0)){
+                if((reverseValues[i] != reverseValues[j] && valueCount > 0)){
                     int stop_index = j;
                     Arrays.sort(reverseArray, start_index, stop_index);
                     valueCount = 0;
+                }
+                else if(j == reverseArray.length - 1 && valueCount > 0){
+                    String temp = reverseArray[j];
+                    reverseArray[j] = reverseArray[j - 1];
+                    reverseArray[j - 1] = temp;
                 }
             }
         }
@@ -73,7 +78,7 @@ public class scrabble{
     }
     public static void main (String args[]){
         scrabble s = new scrabble();
-        String [] strList = new String [] {"one", "eno", "one", "eno", "one"};
+        String [] strList = new String [] {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
         s.Solution(strList);
     }
 }
