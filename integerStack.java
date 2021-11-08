@@ -8,16 +8,26 @@ public class integerStacks{
 
         while(instructions > 0){
             String line = sc.next();
-            if(line.equals("PUSH")){
-                s.push(sc.nextInt());
+            if(s.isEmpty()){
                 instructions--;
             }
-            else if(line.equals("POP")){
-                s.pop();
-                instructions--;
+            else{
+                if(line.equals("PUSH")){
+                    s.push(sc.nextInt());
+                    instructions--;
+                }
+                else if(line.equals("POP")){
+                    s.pop();
+                    instructions--;
+                }
             }
         }
         sc.close();
+        if(s.isEmpty()){
+
+        }
+        else{
         System.out.println(s.peek());
+        }
     }
 }
