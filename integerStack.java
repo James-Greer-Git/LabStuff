@@ -8,23 +8,21 @@ public class integerStacks{
 
         while(instructions > 0){
             String line = sc.next();
-            if(s.isEmpty()){
-                instructions--;
-            }
-            else{
-                if(line.equals("PUSH")){
+            if(line.equals("PUSH")){
                     s.push(sc.nextInt());
                     instructions--;
                 }
-                else if(line.equals("POP")){
+            else if(line.equals("POP") && (! s.isEmpty())){
                     s.pop();
                     instructions--;
-                }
+            }
+            else{
+                instructions--;
             }
         }
         sc.close();
         if(s.isEmpty()){
-
+            System.out.print("empty");
         }
         else{
         System.out.println(s.peek());
