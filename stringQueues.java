@@ -18,6 +18,21 @@ public class stringQueues{
             }
         }
         sc.close();
-        System.out.print(q);
+
+        int size = q.size();
+        if(size%2 == 0){
+            while(q.size() - 1 > size/2){
+                q.remove();
+            }
+            System.out.println(q.peek());
+            q.remove();
+            System.out.println(q.peek());
+        }
+        else{
+            while(q.size() - 1 > size/2){
+                q.remove();
+            }
+            System.out.println(q.peek());
+        }
     }
 }
