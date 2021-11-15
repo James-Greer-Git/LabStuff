@@ -6,7 +6,7 @@ public class stringQueues{
         Queue<String> q = new LinkedList<String>();
         int instructions = sc.nextInt();
 
-        while(instructions > 0){
+        do{
             String line = sc.next();
             if(line.equals("INSERT")){
                 q.add(sc.next());
@@ -16,23 +16,27 @@ public class stringQueues{
                 q.remove();
                 instructions--;
             }
-        }
+            else{
+                instructions--;
+            }
+        }while(instructions > 0);
+
         sc.close();
 
         int size = q.size();
+
         if(size%2 == 0){
-            while(q.size() - 1 > size/2){
-                q.remove();
+            do{
+               q.remove();
             }
-            System.out.println(q.peek());
-            q.remove();
-            System.out.println(q.peek());
+            while(q.size() - 1 > size/2);
         }
         else{
-            while(q.size() - 1 > size/2){
+            do{
                 q.remove();
             }
-            System.out.println(q.peek());
+            while(q.size() - 1 > size/2);
         }
+        System.out.print(q.peek());
     }
 }
