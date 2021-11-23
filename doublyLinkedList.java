@@ -71,7 +71,7 @@ public class doublyLinkedList {
 
     public int secondSmallest(){
         if(head == null){
-            return - 1;
+            return -1;
         }
         int smallest = Integer.MAX_VALUE;
         int secondSmallest = Integer.MAX_VALUE;
@@ -95,6 +95,9 @@ public class doublyLinkedList {
         if(secondSmallest == Integer.MAX_VALUE){
             return -1;
         }
+        if(secondSmallest == smallest){
+            return - 1;
+        }
 
         return secondSmallest;
     }
@@ -109,8 +112,27 @@ public class doublyLinkedList {
             dll.insertLast(sc.nextInt());
             instructions--;
         }
+        
+        int secondSmallest = dll.secondSmallest();
+        
+        while(sc.hasNext()){
+            int start = sc.nextInt();
+            int previous = sc.nextInt();
+            int next = sc.nextInt();
+            if(previous != start - 1){
+                System.out.print(0);
+                return;
+            }
+            if(next != start + 1){
+                if(next != -1){
+                    System.out.print(0);
+                    return;
+                }
+            }
+        }
+        
         sc.close();
-
-        System.out.println(dll.secondSmallest());
+        
+        System.out.print(secondSmallest);
     }
 }
