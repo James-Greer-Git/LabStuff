@@ -103,7 +103,7 @@ public class doublyLinkedList {
         Scanner sc = new Scanner(System.in);
         doublyLinkedList dll = new doublyLinkedList();
         
-        int instructions = 3;
+        int instructions = sc.nextInt();
         while(instructions > 0){
 
             dll.insertLast(sc.nextInt());
