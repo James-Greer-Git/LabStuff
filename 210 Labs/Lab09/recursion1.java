@@ -1,6 +1,9 @@
+import java.util.Scanner;
 public class recursion1{
     public static void main(String args[]){
-        System.out.print(function(68));
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(function(scanner.nextInt()));
+        scanner.close();
     }
     public static long function(long n){
         if(n == 1){
